@@ -12,21 +12,12 @@ export default function Home() {
           Experience the authentic flavors of South India with recipes passed down through generations.
         </p>
         <div className="mt-6">
-        <a
-  href="/menu"
-  className="bg-yellow-700 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-yellow-800"
-  onClick={() => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "menu_view", {
-        event_category: "engagement",
-        event_label: "View Our Menu Button",
-      });
-    }
-  }}
->
-  View Our Menu
-</a>
-
+          <a
+            href="/menu"
+            className="bg-yellow-700 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-yellow-800"
+          >
+            View Our Menu
+          </a>
         </div>
       </section>
 
