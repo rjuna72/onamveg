@@ -1,26 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { gtag } from "./gtag"; // Adjust the path to your utility file
+import { usePathname } from "next/navigation";
 
-const GA_TRACKING_ID = "G-3ZRB8V2X38";
+const GA_TRACKING_ID = "G-3ZRB8V2X38"; // Replace with your Google Analytics ID
 
 export default function AnalyticsWrapper() {
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      gtag("config", GA_TRACKING_ID, {
-        page_path: url,
+    if (typeof window.gtag === "function") {
+      window.gtag("config", GA_TRACKING_ID, {
+        page_path: pathname,
       });
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+    }
+  }, [pathname]);
 
   return null;
 }
