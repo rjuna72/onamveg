@@ -15,20 +15,8 @@ export default function Menu() {
           <h2 className="text-3xl font-bold text-sandal mb-6 border-b-2 border-gold pb-2">
            
           </h2>
-          <ul className="space-y-4">
-            <li className="flex justify-between text-lg">
-              <span>Rasam</span>
-              <span className="text-gold">₹50</span>
-            </li>
-            <li className="flex justify-between text-lg">
-              <span>Tomato Soup</span>
-              <span className="text-gold">₹60</span>
-            </li>
-            <li className="flex justify-between text-lg">
-              <span>Chicken Soup</span>
-              <span className="text-gold">₹120</span>
-            </li>
-          </ul>
+          <p className=" text-xl text-center">Born out of immense passion to give back to the community and interest to give back to the community, Onam.Veg was started as both a social enterprise and community venture, employing locals and sourcing sustainable food all in order to give the customer the most delicious and quality food in the area!</p>
+          
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -23,27 +23,27 @@ export default function Navbar() {
       {/* Dropdown Menu */}
       {isOpen && (
         <div className="bg-yellow-800 absolute top-16 right-4 w-48 shadow-md flex flex-col items-center space-y-4 py-4 rounded-md z-50">
-          <a
+          <link
             href="/"
             className="hover:text-yellow-300 text-lg text-white"
             onClick={() => setIsOpen(false)} // Close menu on click
           >
             Home
-          </a>
-          <a
+          </link>
+          <link
             href="/menu"
             className="hover:text-yellow-300 text-lg text-white"
             onClick={() => setIsOpen(false)} // Close menu on click
           >
             Menu
-          </a>
-          <a
+          </link>
+          <link
             href="/about"
             className="hover:text-yellow-300 text-lg text-white"
             onClick={() => setIsOpen(false)} // Close menu on click
           >
             About Us
-          </a>
+          </link>
         </div>
       )}
     </>

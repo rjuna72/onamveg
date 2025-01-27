@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "A Taste of Tradition - South Indian Cuisine",
-  description: "Experience the authentic flavors of South India with recipes passed down through generations.",
+  description:
+    "Experience the authentic flavors of South India with recipes passed down through generations.",
 };
 
 export default function RootLayout({
@@ -30,17 +31,20 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap"
+          rel="stylesheet"
+        />
       </head>
 
       <body
-      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-              <Navbar />
+        {/* Navbar inside the body */}
+        <Navbar />
 
-        {/* Google Analytics Script */}
+        {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-3ZRB8V2X38`}
           strategy="afterInteractive"
@@ -54,8 +58,11 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Content */}
         <AnalyticsWrapper />
         {children}
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>
