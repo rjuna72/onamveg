@@ -19,16 +19,16 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-40">
-          <h1 className="  md:text-5xl font-bold curlytext text-white mb-4">
-            Onam.Veg
-          </h1>
+        <h1 className="text-5xl sm:text-6xl md:text-5xl font-bold curlytext text-white mb-4">
+  Onam.Veg
+</h1>
           <p className="text-lg md:text-xl pt-10 text-white max-w-2xl">
             Experience the authentic flavors of South India with recipes passed down through generations.
           </p>
           <div className="mt-6">
             <a
               href="/menu"
-              className="bg-yellow-700 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-yellow-800"
+              className="bg-yellow-500 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-yellow-600"
             >
               View Our Menu
             </a>
