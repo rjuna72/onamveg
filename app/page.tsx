@@ -11,7 +11,7 @@ export default function Home() {
       <section className="relative w-full h-screen">
         <Image
           src="/images/leaf.png"
-          alt="Profile picture"
+          alt="Banana Leaf"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
