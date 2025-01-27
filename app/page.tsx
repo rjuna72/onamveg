@@ -2,6 +2,7 @@
 
 import Navbar from "./navbar";
 import Image from "next/image";
+import leafImage from "./images/leaf.png";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-screen">
         <Image
-          src="/images/leaf.png"
+          src={leafImage}
           alt="Banana Leaf"
           layout="fill"
           objectFit="cover"
