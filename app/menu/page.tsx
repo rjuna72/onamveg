@@ -50,7 +50,34 @@ export default function Menu() {
                 <span>Ghee Roast</span>
                 <span className="text-gold">₹70</span>
               </li>
-              {/* Add more items as needed */}
+              <li className="flex justify-between text-lg">
+                <span>Paneer Dosa</span>
+                <span className="text-gold">₹110</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Plain Roast</span>
+                <span className="text-gold">₹60</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Appam</span>
+                <span className="text-gold">₹15</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Chappathi</span>
+                <span className="text-gold">₹15</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Idiyappam</span>
+                <span className="text-gold">₹15</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Porota</span>
+                <span className="text-gold">₹20</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Puttu (With Curry and Pappadam)</span>
+                <span className="text-gold">₹70</span>
+              </li>
             </ul>
           )}
         </div>
@@ -78,7 +105,50 @@ export default function Menu() {
                 <span>Vegetable Cashew Paneer Fried Rice</span>
                 <span className="text-gold">₹180</span>
               </li>
-              {/* Add more items as needed */}
+              <li className="flex justify-between text-lg">
+                <span>Butter Paneer Broccoli Noodles</span>
+                <span className="text-gold">₹100</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable Noodles</span>
+                <span className="text-gold">₹250</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Paneer Chilli Fry</span>
+                <span className="text-gold">₹180</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Paneer Butter Masala</span>
+                <span className="text-gold">₹100</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Paneer Mutter Masala</span>
+                <span className="text-gold">₹250</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable Kurma</span>
+                <span className="text-gold">₹180</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable Makhani</span>
+                <span className="text-gold">₹100</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable Sizzler</span>
+                <span className="text-gold">₹250</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable American Chop Suey</span>
+                <span className="text-gold">₹180</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Vegetable Chop Suey</span>
+                <span className="text-gold">₹250</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>Tomato Fry</span>
+                <span className="text-gold">₹180</span>
+              </li>
             </ul>
           )}
         </div>
@@ -106,7 +176,10 @@ export default function Menu() {
                 <span>Paneer Butter Soup</span>
                 <span className="text-gold">₹120</span>
               </li>
-              {/* Add more items as needed */}
+              <li className="flex justify-between text-lg">
+                <span>Paneer Butter Sweet Corn Soup</span>
+                <span className="text-gold">₹120</span>
+              </li>
             </ul>
           )}
         </div>
