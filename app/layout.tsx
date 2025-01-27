@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import AnalyticsWrapper from "./AnalyticsWrapper";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
   description: "Experience the authentic flavors of South India with recipes passed down through generations.",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,23 +29,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag (gtag.js) */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-3ZRB8V2X38`}></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-3ZRB8V2X38');
-            `,
-          }}
-        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet" />
       </head>
+
       <body
+      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+              <Navbar />
+
+        {/* Google Analytics Script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-3ZRB8V2X38`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3ZRB8V2X38');
+          `}
+        </Script>
+
         <AnalyticsWrapper />
         {children}
         <Footer />

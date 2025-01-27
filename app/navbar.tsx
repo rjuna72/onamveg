@@ -1,35 +1,51 @@
-import React from "react";
-import Link from "next/link"; // Import Next.js Link for navigation
+"use client";
 
-const Navbar = () => {
+import { useState } from "react";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="bg-yellow-200 border-b border-yellow-300 py-6">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl font-extrabold font-serif text-yellow-800">
-          <Link href="/">Onam.Veg</Link>
-        </h1>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <Link href="/menu" className="text-yellow-700 hover:underline">
-                Menu
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="text-yellow-700 hover:underline">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-yellow-700 hover:underline">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
-};
+    <>
+      {/* Floating Hamburger Icon */}
+      <button
+        className="fixed top-4 right-4 text-white text-3xl bg-yellow-900 rounded-full p-3 shadow-md focus:outline-none z-50"
+        onClick={toggleMenu}
+        aria-label="Toggle Menu"
+      >
+        ☰
+      </button>
 
-export default Navbar;
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="bg-yellow-800 absolute top-16 right-4 w-48 shadow-md flex flex-col items-center space-y-4 py-4 rounded-md z-50">
+          <a
+            href="/"
+            className="hover:text-yellow-300 text-lg text-white"
+            onClick={() => setIsOpen(false)} // Close menu on click
+          >
+            Home
+          </a>
+          <a
+            href="/menu"
+            className="hover:text-yellow-300 text-lg text-white"
+            onClick={() => setIsOpen(false)} // Close menu on click
+          >
+            Menu
+          </a>
+          <a
+            href="/about"
+            className="hover:text-yellow-300 text-lg text-white"
+            onClick={() => setIsOpen(false)} // Close menu on click
+          >
+            About Us
+          </a>
+        </div>
+      )}
+    </>
+  );
+}
