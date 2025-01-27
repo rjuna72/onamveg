@@ -22,7 +22,15 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="bg-yellow-800 absolute top-16 right-4 w-48 shadow-md flex flex-col items-center space-y-4 py-4 rounded-md z-50">
-          <Link href="/#menu">
+          <Link href="/">
+            <span
+              className="hover:text-yellow-300 text-lg text-white cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </span>
+          </Link>
+          <Link href="/menu">
             <span
               className="hover:text-yellow-300 text-lg text-white cursor-pointer"
               onClick={() => setIsOpen(false)}
@@ -30,7 +38,7 @@ export default function Navbar() {
               Menu
             </span>
           </Link>
-          <Link href="/#about">
+          <Link href="/about">
             <span
               className="hover:text-yellow-300 text-lg text-white cursor-pointer"
               onClick={() => setIsOpen(false)}
