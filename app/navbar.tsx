@@ -52,6 +52,14 @@ export default function Navbar() {
                 About Us
               </span>
             </Link>
+            <Link href="/contact">
+              <span
+                className="hover:text-yellow-300 text-lg text-white cursor-pointer"
+                onClick={() => setIsOpen(false)}
+              >
+                 Contact
+              </span>
+            </Link>
           </>
         )}
       </button>
