@@ -7,6 +7,55 @@ export default function Menu() {
   const [isBreakfastOpen, setBreakfastOpen] = useState(false);
   const [isSpecialsOpen, setSpecialsOpen] = useState(false);
   const [isSoupsOpen, setSoupsOpen] = useState(false);
+  const [openDescriptions, setOpenDescriptions] = useState<Record<string, boolean>>({});
+
+  // Toggle description
+  const toggleDescription = (item: string) => {
+    setOpenDescriptions((prev) => ({
+      ...prev,
+      [item]: !prev[item],
+    }));
+  };
+
+  const menuItems: Record<string, { name: string; price: number; desc: string }[]> = {
+    Breakfast: [
+      { name: "Idli (3)", price: 50, desc: "Soft steamed rice cakes served with chutney & sambar." },
+      { name: "Idli (1)", price: 12, desc: "Single steamed rice cake with chutney & sambar." },
+      { name: "Poori Bhaji", price: 75, desc: "Fluffy deep-fried bread served with spiced potato curry." },
+      { name: "Poori Bhaji (single)", price: 15, desc: "Single serving of poori with potato curry." },
+      { name: "Masala Dosa", price: 80, desc: "Crispy dosa stuffed with spiced potato filling." },
+      { name: "Ghee Roast", price: 70, desc: "Golden crispy dosa roasted with pure ghee." },
+      { name: "Paneer Dosa", price: 110, desc: "Dosa filled with spiced paneer stuffing." },
+      { name: "Plain Roast", price: 60, desc: "Classic crispy dosa without any stuffing." },
+      { name: "Appam", price: 15, desc: "Soft, lacy rice pancakes perfect with coconut milk." },
+      { name: "Chappathi", price: 15, desc: "Whole wheat flatbread served with curry." },
+      { name: "Idiyappam", price: 15, desc: "Steamed rice noodle cakes served with coconut milk." },
+      { name: "Porota", price: 20, desc: "Layered, crispy flatbread made with refined flour." },
+      { name: "Puttu (With Curry and Pappadam)", price: 70, desc: "Steamed cylindrical rice cake served with curry and crispy pappadam." }
+    ],
+    Specials: [
+      { name: "Vegetable Biryani", price: 100, desc: "Aromatic basmati rice cooked with fresh vegetables and spices." },
+      { name: "Paneer Broccoli Biryani", price: 250, desc: "Rich biryani with paneer and broccoli in flavorful spices." },
+      { name: "Vegetable Cashew Paneer Fried Rice", price: 180, desc: "Fried rice with a delightful mix of vegetables, cashews, and paneer." },
+      { name: "Butter Paneer Broccoli Noodles", price: 100, desc: "Noodles tossed with paneer, broccoli, and rich butter sauce." },
+      { name: "Vegetable Noodles", price: 250, desc: "Classic noodles stir-fried with fresh vegetables." },
+      { name: "Paneer Chilli Fry", price: 180, desc: "Spicy stir-fried paneer tossed with capsicum & chilies." },
+      { name: "Paneer Butter Masala", price: 100, desc: "Paneer cooked in a creamy tomato-based butter sauce." },
+      { name: "Paneer Mutter Masala", price: 250, desc: "Paneer and green peas in a rich, flavorful gravy." },
+      { name: "Vegetable Kurma", price: 180, desc: "Mixed vegetable curry cooked in a coconut-based gravy." },
+      { name: "Vegetable Makhani", price: 100, desc: "Vegetables cooked in a rich, creamy tomato-based sauce." },
+      { name: "Vegetable Sizzler", price: 250, desc: "Grilled vegetables served sizzling hot with a special sauce." },
+      { name: "Vegetable American Chop Suey", price: 180, desc: "Crispy noodles served with a tangy vegetable sauce." },
+      { name: "Vegetable Chop Suey", price: 250, desc: "Mixed vegetables and crispy noodles in a savory sauce." },
+      { name: "Tomato Fry", price: 180, desc: "Spicy fried tomato curry seasoned with special spices." }
+    ],
+    Soups: [
+      { name: "Cream of Vegetable Soup", price: 50, desc: "Smooth, creamy soup made with fresh vegetables." },
+      { name: "Sweet Corn Vegetable Soup", price: 60, desc: "A comforting soup with sweet corn and mixed veggies." },
+      { name: "Paneer Butter Soup", price: 120, desc: "Creamy soup infused with paneer and butter flavors." },
+      { name: "Paneer Butter Sweet Corn Soup", price: 120, desc: "A rich soup combining paneer, butter, and sweet corn." }
+    ]
+  };
 
   return (
     <div className="bg-white min-h-screen text-gray-900">
@@ -15,174 +64,40 @@ export default function Menu() {
           Our Menu
         </h1>
 
-        {/* Breakfast Section */}
-        <div className="mb-8">
-          <button
-            onClick={() => setBreakfastOpen(!isBreakfastOpen)}
-            className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center"
-          >
-            Breakfast
-            <span className="text-gold">{isBreakfastOpen ? "-" : "+"}</span>
-          </button>
-          {isBreakfastOpen && (
+        {Object.entries(menuItems).map(([category, items]) => (
+          <div key={category} className="mb-8">
+            <button
+              onClick={() => setBreakfastOpen(!isBreakfastOpen)}
+              className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center"
+            >
+              {category}
+              <span className="text-gold">{isBreakfastOpen ? "-" : "+"}</span>
+            </button>
             <ul className="space-y-4 mt-4 pl-4 border-l-4 border-sandal">
-              <li className="flex justify-between text-lg">
-                <span>Idli (3)</span>
-                <span className="text-gold">₹50</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Idli (1)</span>
-                <span className="text-gold">₹12</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Poori Bhaji</span>
-                <span className="text-gold">₹75</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Poori Bhaji (single)</span>
-                <span className="text-gold">₹15</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Masala Dosa</span>
-                <span className="text-gold">₹80</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Ghee Roast</span>
-                <span className="text-gold">₹70</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Dosa</span>
-                <span className="text-gold">₹110</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Plain Roast</span>
-                <span className="text-gold">₹60</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Appam</span>
-                <span className="text-gold">₹15</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Chappathi</span>
-                <span className="text-gold">₹15</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Idiyappam</span>
-                <span className="text-gold">₹15</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Porota</span>
-                <span className="text-gold">₹20</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Puttu (With Curry and Pappadam)</span>
-                <span className="text-gold">₹70</span>
-              </li>
+              {items.map((item) => (
+                <li key={item.name} className="text-lg">
+                  <div className="flex justify-between items-center">
+                    <span>{item.name}</span>
+                    <div className="flex gap-3 items-center">
+                      <span className="text-gold">₹{item.price}</span>
+                      <button
+                        onClick={() => toggleDescription(item.name)}
+                        className="text-sm text-blue-600 border px-2 py-1 rounded"
+                      >
+                        Info
+                      </button>
+                    </div>
+                  </div>
+                  {openDescriptions[item.name] && (
+                    <p className="mt-2 text-sm text-gray-700 bg-gray-100 p-2 rounded">
+                      {item.desc}
+                    </p>
+                  )}
+                </li>
+              ))}
             </ul>
-          )}
-        </div>
-
-        {/* Specials Section */}
-        <div className="mb-8">
-          <button
-            onClick={() => setSpecialsOpen(!isSpecialsOpen)}
-            className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center"
-          >
-            Specials
-            <span className="text-gold">{isSpecialsOpen ? "-" : "+"}</span>
-          </button>
-          {isSpecialsOpen && (
-            <ul className="space-y-4 mt-4 pl-4 border-l-4 border-sandal">
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Biryani</span>
-                <span className="text-gold">₹100</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Broccoli Biryani</span>
-                <span className="text-gold">₹250</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Cashew Paneer Fried Rice</span>
-                <span className="text-gold">₹180</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Butter Paneer Broccoli Noodles</span>
-                <span className="text-gold">₹100</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Noodles</span>
-                <span className="text-gold">₹250</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Chilli Fry</span>
-                <span className="text-gold">₹180</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Butter Masala</span>
-                <span className="text-gold">₹100</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Mutter Masala</span>
-                <span className="text-gold">₹250</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Kurma</span>
-                <span className="text-gold">₹180</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Makhani</span>
-                <span className="text-gold">₹100</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Sizzler</span>
-                <span className="text-gold">₹250</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable American Chop Suey</span>
-                <span className="text-gold">₹180</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Vegetable Chop Suey</span>
-                <span className="text-gold">₹250</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Tomato Fry</span>
-                <span className="text-gold">₹180</span>
-              </li>
-            </ul>
-          )}
-        </div>
-
-        {/* Soups Section */}
-        <div className="mb-8">
-          <button
-            onClick={() => setSoupsOpen(!isSoupsOpen)}
-            className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center"
-          >
-            Soups
-            <span className="text-gold">{isSoupsOpen ? "-" : "+"}</span>
-          </button>
-          {isSoupsOpen && (
-            <ul className="space-y-4 mt-4 pl-4 border-l-4 border-sandal">
-              <li className="flex justify-between text-lg">
-                <span>Cream of Vegetable Soup</span>
-                <span className="text-gold">₹50</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Sweet Corn Vegetable Soup</span>
-                <span className="text-gold">₹60</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Butter Soup</span>
-                <span className="text-gold">₹120</span>
-              </li>
-              <li className="flex justify-between text-lg">
-                <span>Paneer Butter Sweet Corn Soup</span>
-                <span className="text-gold">₹120</span>
-              </li>
-            </ul>
-          )}
-        </div>
+          </div>
+        ))}
       </section>
     </div>
   );
