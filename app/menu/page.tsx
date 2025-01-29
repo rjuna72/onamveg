@@ -4,8 +4,15 @@ import Head from "next/head";
 import { useState } from "react";
 
 export default function Menu() {
-  const [isBreakfastOpen, setBreakfastOpen] = useState(false);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const [openDescriptions, setOpenDescriptions] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (category: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
 
   const toggleDescription = (item: string) => {
     setOpenDescriptions((prev) => ({
@@ -67,15 +74,32 @@ export default function Menu() {
           <h1 className="text-4xl font-bold curlytext text-green-900 text-center mb-12">Our Menu</h1>
           {Object.entries(menuItems).map(([category, items]) => (
             <div key={category} className="mb-8">
-              <button onClick={() => setBreakfastOpen(!isBreakfastOpen)} className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center">{category}<span className="text-gold">{isBreakfastOpen ? "-" : "+"}</span></button>
-              <ul className="space-y-4 mt-4 pl-4 border-l-4 border-sandal">
-                {items.map((item) => (
-                  <li key={item.name} className="text-lg flex justify-between items-center">
-                    <span>{item.name}</span>
-                    <span className="text-gold">₹{item.price}</span>
-                  </li>
-                ))}
-              </ul>
+              <button onClick={() => toggleSection(category)} className="text-3xl font-bold text-sandal mb-4 border-b-2 border-gold pb-2 w-full text-left flex justify-between items-center">{category}<span className="text-gold">{openSections[category] ? "-" : "+"}</span></button>
+              {openSections[category] && (
+                <ul className="space-y-4 mt-4 pl-4 border-l-4 border-sandal">
+                  {items.map((item) => (
+                    <li key={item.name} className="text-lg">
+                      <div className="flex justify-between items-center">
+                        <span>{item.name}</span>
+                        <div className="flex gap-3 items-center">
+                          <span className="text-gold">₹{item.price}</span>
+                          <button
+                            onClick={() => toggleDescription(item.name)}
+                            className="text-sm text-blue-600 border px-2 py-1 rounded"
+                          >
+                            Info
+                          </button>
+                        </div>
+                      </div>
+                      {openDescriptions[item.name] && (
+                        <p className="mt-2 text-sm text-gray-700 bg-gray-100 p-2 rounded">
+                          {item.desc}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </section>
