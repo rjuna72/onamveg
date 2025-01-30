@@ -60,6 +60,14 @@ export default function Navbar() {
                  Contact
               </span>
             </Link>
+            <Link href="/careers">
+              <span
+                className="hover:text-yellow-300 text-lg text-white cursor-pointer"
+                onClick={() => setIsOpen(false)}
+              >
+                 Careers
+              </span>
+            </Link>
           </>
         )}
       </button>
