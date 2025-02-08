@@ -21,7 +21,7 @@ export default function Menu() {
             frameBorder="0"
             className="border-0"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Onam.Veg"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0j0cQ5zDyU3yqfFoYzzRvE_7McBIZ-70&q=Onam.Veg"
             allowFullScreen>
           </iframe>
         </div>
