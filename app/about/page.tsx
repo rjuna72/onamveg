@@ -1,3 +1,5 @@
+
+
 "use client";
 
 export default function Menu() {
@@ -21,7 +23,7 @@ export default function Menu() {
             frameBorder="0"
             className="border-0"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0j0cQ5zDyU3yqfFoYzzRvE_7McBIZ-70&q=Onam.Veg"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0j0cQ5zDyU3yqfFoYzzRvE_7McBIZ-70&q=9.661562,76.338366"
             allowFullScreen>
           </iframe>
         </div>
