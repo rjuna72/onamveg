@@ -36,6 +36,11 @@ export default function Home() {
         </div>
       </section>
       {/* Remaining Content */}
+
+      <div>
+        <p>+91 87147 03888</p>
+        <p>vrajeevnair@gmail.com</p>
+      </div>
     </div>
   );
 }
