@@ -37,7 +37,7 @@ export default function Home() {
       </section>
       {/* Remaining Content */}
 
-      <div className="bg-lime-800">
+      <div className="bg-lime-800 text-white text-center">
         <p>+91 87147 03888</p>
         <p>onam.veg@gmail.com</p>
       </div>

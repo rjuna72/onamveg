@@ -15,6 +15,7 @@ export default function Menu() {
           </h2>
           <p className=" text-xl text-center">NH66, Cherthala, Kerala 688524, India</p>
           <p className=" text-xl mt-10 text-center">onam.veg@gmail.com</p>
+          <p className=" text-xl mt-10 text-center">+91 87147 03888</p>
           
         </div>
       </section>
