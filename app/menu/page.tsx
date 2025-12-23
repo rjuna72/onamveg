@@ -425,4 +425,4 @@ function SearchIcon() {
       />
     </svg>
   );
-}
+}}
