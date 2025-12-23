@@ -11,6 +11,9 @@ type Category =
   | "Snacks"
   | "Beverages";
 
+
+type TagType = "Spicy" | "Best Seller" | "New";
+
 type MenuItem = {
   id: string;
   name: string;
@@ -18,7 +21,7 @@ type MenuItem = {
   price: number;
   category: Category;
   image?: string;
-  tags?: Array<"Spicy" | "Best Seller" | "New">;
+  tags?: TagType[];
 };
 
 const CATEGORIES: Category[] = [
@@ -381,7 +384,8 @@ function MenuCard({ item }: { item: MenuItem }) {
   );
 }
 
-function Tag({ label }: { label: MenuItem["tags"][number] }) {
+function Tag({ label }: { label: TagType }) {
+    {
   const styles =
     label === "Spicy"
       ? "border-red-200 bg-red-50 text-red-700"
