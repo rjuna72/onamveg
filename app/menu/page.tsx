@@ -28,7 +28,7 @@ const CATEGORIES: Category[] = ["Combos", "Rice", "Curries", "Breads", "Snacks",
  */
 const IMAGE_BY_ID: Record<string, string> = {
   // Combos / sets / meals
-  "combo-idly-set": "/menu/idlyset.webp",
+  "combo-idly-set": "/menu/idliset.webp",
   "combo-poori-set": "/menu/purimasala.webp",
   "combo-dosa-set": "/menu/setdosa.webp",
   "combo-puttu-set": "/menu/puttukadala.webp",
