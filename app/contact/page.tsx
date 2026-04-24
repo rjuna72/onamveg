@@ -28,15 +28,14 @@ export default function ContactPage() {
               Open in Maps
             </a>
 
-            <div className="mt-4">
+            <div className="map-container" style={{ width: '100%', overflow: 'hidden', height: '400px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6775.598294255861!2d76.33321399176117!3d9.66162475409223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b087d3d631190f9%3A0x8fe844ef4d55256!2sOnam.Veg%20Restaurant!5e1!3m2!1sen!2sqa!4v1777021947388!5m2!1sen!2sqa"
                 width="100%"
-                height="300"
+                height="400"
+                frameBorder="0"
                 style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Onam+Veg+South+Indian+Restaurant`}
+                allowFullScreen
               ></iframe>
             </div>
   
