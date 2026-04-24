@@ -25,14 +25,14 @@ export default function CareersPage() {
         </div>
   
         <div className="mt-12 rounded-xl border p-6">
-          <h2 className="font-semibold text-lg">How to Apply</h2>
+          <h2 className="font-semibold text-lg">How to Apply - test</h2>
           <p className="mt-2 text-gray-600">
             Call or WhatsApp us with your details and the role you’re applying for.
           </p>
   
           <p className="mt-4 text-sm text-gray-700">
             📞 +91 XXXXX XXXXX <br />
-            💬 WhatsApp preferred
+            💬 WhatsApp preferred hello world
           </p>
         </div>
       </main>
