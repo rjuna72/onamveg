@@ -34,7 +34,7 @@ export default function ContactPage() {
                 height="400"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Onam+Veg+South+Indian+Restaurant`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_MAPS_API_KEY}&q=Onamveg+Restaurant`}
                 allowFullScreen
               ></iframe>
             </div>
