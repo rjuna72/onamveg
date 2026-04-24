@@ -8,7 +8,7 @@ export default function CareersPage() {
   
         <div className="mt-10 space-y-6">
           <JobCard
-            title="Kitchen ssssStaff"
+            title="Kitchen ssssStddddaff"
             type="Full-time / Part-time"
             desc="Assist with food preparation and kitchen operations."
           />
