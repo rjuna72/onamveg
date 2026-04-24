@@ -22,12 +22,23 @@ export default function ContactPage() {
             </div>
   
             <a
-              href="#"
+              href="https://www.google.com/maps/search/?api=1&query=Onam.Veg+Restaurant+Cherthala+Kerala"
               className="mt-6 inline-block rounded-lg bg-[#2f7d32] px-4 py-2 text-white"
             >
               Open in Maps
             </a>
-          </div>
+
+            <div className="mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6775.598294255861!2d76.33321399176117!3d9.66162475409223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b087d3d631190f9%3A0x8fe844ef4d55256!2sOnam.Veg%20Restaurant!5e1!3m2!1sen!2sqa!4v1777021947388!5m2!1sen!2sqa"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
   
           {/* Simple Form (UI only) */}
           <form className="rounded-xl border p-6">
