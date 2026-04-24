@@ -3,7 +3,7 @@ export default function CareersPage() {
       <main className="mx-auto max-w-4xl px-4 py-16">
         <h1 className="text-3xl font-bold">Careers at Onam Veg</h1>
         <p className="mt-4 text-gray-600">
-          Join our team and be part of a growing vegetarian restaurant.
+          this is test code 1.
         </p>
   
         <div className="mt-10 space-y-6">
