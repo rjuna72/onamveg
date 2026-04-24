@@ -3,12 +3,12 @@ export default function CareersPage() {
       <main className="mx-auto max-w-4xl px-4 py-16">
         <h1 className="text-3xl font-bold">Careers at Onam Veg</h1>
         <p className="mt-4 text-gray-600">
-          this is test code 1.
+          this is test sdsds code 1.
         </p>
   
         <div className="mt-10 space-y-6">
           <JobCard
-            title="Kitchen Staff"
+            title="Kitchen ssssStaff"
             type="Full-time / Part-time"
             desc="Assist with food preparation and kitchen operations."
           />
