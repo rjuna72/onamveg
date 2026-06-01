@@ -6,8 +6,9 @@ import Script from "next/script";
 
 
 export const metadata = {
-  title: "Onam Veg",
-  description: "Authentic South Indian Vegetarian Restaurant",
+  title: "Onam Veg | Authentic South Indian Vegetarian Restaurant",
+  description: "Fresh. Vegetarian. South Indian. Authentic flavours, clean ingredients, and fast service. Traditional Kerala cuisine in Cherthala.",
+  keywords: "South Indian vegetarian, Kerala cuisine, Cherthala restaurant, vegetarian food",
 };
 
 export default function RootLayout({

@@ -59,19 +59,24 @@ function Hero() {
     <section className="mx-auto max-w-6xl px-4 pt-12 pb-16">
       <div className="grid gap-8 md:grid-cols-2 items-center">
         <div>
-          <h1 className="text-4xl font-bold text-[#1a1a1a]">
+          <h1 className="text-5xl font-bold" style={{ color: "#052E16" }}>
             Fresh. Vegetarian. South Indian.
           </h1>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-gray-700 text-lg leading-relaxed">
             Authentic flavours, clean ingredients, and fast service.
           </p>
-          <button className="mt-6 rounded-lg bg-[#2f7d32] px-5 py-3 text-white">
-            <a href="/menu">Explore Menu</a>
-          </button>
+          <div className="mt-8 flex gap-4">
+            <a href="/menu" className="rounded-lg px-6 py-3 text-white font-semibold transition-all hover:brightness-90" style={{ backgroundColor: "#2F7D32" }}>
+              Explore Menu
+            </a>
+            <a href="https://labs.google.com/pomelli/brand_book/9MX4AEzPw781u3FJ828O92" target="_blank" rel="noopener noreferrer" className="rounded-lg px-6 py-3 font-semibold transition-all" style={{ backgroundColor: "#EAF5EE", color: "#052E16", border: "2px solid #2F7D32" }}>
+              Brand Guidelines
+            </a>
+          </div>
         </div>
 
-        <div className="h-64 rounded-xl bg-[#eaf5ee] flex items-center justify-center">
-          <span className="text-[#2f7d32] font-semibold">
+        <div className="h-64 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#EAF5EE" }}>
+          <span className="font-semibold" style={{ color: "#2F7D32" }}>
             Food image here
           </span>
         </div>
@@ -82,11 +87,16 @@ function Hero() {
 
 function CategoryBar({ categories }: { categories: string[] }) {
   return (
-    <div className="mb-12 flex gap-2 overflow-x-auto">
+    <div className="mb-12 flex gap-2 overflow-x-auto pb-2">
       {categories.map((c) => (
         <button
           key={c}
-          className="rounded-full border px-4 py-2 text-sm hover:bg-[#eaf5ee]"
+          className="rounded-full px-5 py-2 text-sm font-medium whitespace-nowrap transition-all hover:bg-[#eaf5ee]"
+          style={{ 
+            border: "2px solid #2F7D32", 
+            color: "#052E16",
+            backgroundColor: "transparent"
+          }}
         >
           {c}
         </button>
@@ -103,9 +113,9 @@ function Section({
 }: any) {
   return (
     <div className="mb-14">
-      <div className="text-sm font-semibold text-[#2f7d32]">{eyebrow}</div>
-      <h2 className="text-2xl font-bold mt-1">{title}</h2>
-      <p className="text-gray-600 mt-1 mb-6">{subtitle}</p>
+      <div className="text-sm font-semibold" style={{ color: "#2F7D32" }}>{eyebrow}</div>
+      <h2 className="text-3xl font-bold mt-2" style={{ color: "#052E16" }}>{title}</h2>
+      <p className="text-gray-700 mt-2 mb-8">{subtitle}</p>
       {children}
     </div>
   );
@@ -113,16 +123,16 @@ function Section({
 
 function OfferCard({ name, desc, price, oldPrice }: any) {
   return (
-    <div className="rounded-xl border p-4">
-      <div className="h-36 rounded-lg bg-[#eaf5ee] mb-4" />
-      <div className="font-semibold">{name}</div>
-      <div className="text-sm text-gray-600">{desc}</div>
+    <div className="rounded-xl border p-5 transition-all hover:shadow-lg" style={{ borderColor: "#2F7D32", backgroundColor: "#FFFFFF" }}>
+      <div className="h-36 rounded-lg mb-4" style={{ backgroundColor: "#EAF5EE" }} />
+      <div className="font-semibold text-[#1a1a1a]">{name}</div>
+      <div className="text-sm text-gray-600 mt-1">{desc}</div>
       <div className="mt-4 flex justify-between items-end">
         <div>
-          <div className="text-lg font-bold text-[#2f7d32]">{price}</div>
+          <div className="text-lg font-bold" style={{ color: "#2F7D32" }}>{price}</div>
           <div className="text-sm line-through text-gray-400">{oldPrice}</div>
         </div>
-        <button className="rounded-lg bg-[#2f7d32] px-3 py-2 text-white text-sm">
+        <button className="rounded-lg px-3 py-2 text-white text-sm font-medium transition-all hover:brightness-90" style={{ backgroundColor: "#2F7D32" }}>
           Order
         </button>
       </div>
@@ -132,13 +142,13 @@ function OfferCard({ name, desc, price, oldPrice }: any) {
 
 function MenuCard({ name, desc, price }: any) {
   return (
-    <div className="rounded-xl border p-4">
-      <div className="h-28 rounded-lg bg-[#eaf5ee] mb-4" />
-      <div className="font-semibold">{name}</div>
-      <div className="text-sm text-gray-600">{desc}</div>
+    <div className="rounded-xl border p-5 transition-all hover:shadow-lg" style={{ borderColor: "#2F7D32", backgroundColor: "#FFFFFF" }}>
+      <div className="h-28 rounded-lg mb-4" style={{ backgroundColor: "#EAF5EE" }} />
+      <div className="font-semibold text-[#1a1a1a]">{name}</div>
+      <div className="text-sm text-gray-600 mt-1">{desc}</div>
       <div className="mt-4 flex justify-between items-center">
-        <div className="font-bold text-[#2f7d32]">{price}</div>
-        <button className="rounded-lg border px-3 py-1 text-sm">
+        <div className="font-bold" style={{ color: "#2F7D32" }}>{price}</div>
+        <button className="rounded-lg border px-3 py-1.5 text-sm font-medium transition-all" style={{ borderColor: "#2F7D32", color: "#2F7D32" }}>
           Add
         </button>
       </div>
