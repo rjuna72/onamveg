@@ -24,16 +24,17 @@ export default function CareersPage() {
           />
         </div>
   
-        <div className="mt-12 rounded-xl border p-6">
-          <h2 className="font-semibold text-lg">How to Apply - test</h2>
-          <p className="mt-2 text-gray-600">
-            Call or WhatsApp us with your details and the role you’re applying for.
+        <div className="mt-12 rounded-xl border p-6" style={{ borderColor: "#2F7D32", backgroundColor: "#EAF5EE" }}>
+          <h2 className="font-semibold text-lg" style={{ color: "#052E16" }}>How to Apply</h2>
+          <p className="mt-2 text-gray-700">
+            Call or WhatsApp us with your details and the role you're applying for.
           </p>
   
-          <p className="mt-4 text-sm text-gray-700">
-            📞 +91 XXXXX XXXXX <br />
-            💬 WhatsApp preferred hello world
-          </p>
+          <div className="mt-6">
+            <p className="text-lg font-medium text-gray-800">
+              📞 +91 87147 03888 💬 WhatsApp preferred
+            </p>
+          </div>
         </div>
       </main>
     );
